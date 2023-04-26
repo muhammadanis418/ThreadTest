@@ -86,6 +86,9 @@ public class TestService {
 
 
     @Async //("CustomThread")
+    //   @Async has two limitations:
+    //   1. It must be applied to publicmethods only.
+    //   2. Self-invocation — calling the async method from within the same class — won't work.
 
     public void check3() {
         List<Integer> numberList = new ArrayList<>(100);
